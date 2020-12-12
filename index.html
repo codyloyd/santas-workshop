@@ -9,9 +9,13 @@
 </head>
 <body>
 	<style>
-		body {
+		html {
 			background-color: #ffffff;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%239dc3db' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+		}
+		body {
+			max-width: 500px;
+			margin: 0 auto;
 		}
 		h1 {
 			font-family: 'Fredoka One';
@@ -28,6 +32,7 @@
 			font-family: 'Fredoka One';
 			padding: 8px;
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,.3);
+			margin-bottom: 32px;
 		}
 		div {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,18 +46,14 @@
 			border-radius: 4px;
 			display: none;
 		}
-
-		#actionCard {
-
-		}
 	</style>
-	<h1>Santa's Workshop!</h1>
-	<button id="turn-button">Take Turn!</button>
-	<div id="dice"></div>
-	<div id="actionCard"></div>
-
-	<button id="fight">Fight Monster!</button>
-	<div id="fightResult"></div>
+		<h1>Santa's Workshop!</h1>
+		<button id="turn-button">Take Turn!</button>
+		<div id="dice"></div>
+		<div id="actionCard"></div>
+	
+		<button id="fight">Fight Monster!</button>
+		<div id="fightResult"></div>
 	<script>
 		const turnButton = document.getElementById('turn-button')
 		turnButton.addEventListener('click', takeTurn)
