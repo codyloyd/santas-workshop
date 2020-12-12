@@ -72,11 +72,11 @@
 		const actions = [
 			{
 				action: "monster", // add monster
-				weight: 4
+				weight: 6
 			},
 			{
 				action: "melted", // kill monster
-				weight: 1
+				weight: 3
 			},
 			{
 				action: "snowballs", // out ot snowballs
@@ -94,13 +94,14 @@
 			actionCard.textContent = drawAction()
 		}
 
-		function rollDice(n=4) {
+		function rollDice(n=6) {
 			return Math.floor(Math.random() * n) + 1
 		}
 
 		function drawAction() {
 			action = weightedRandom(actions)
 			actionText = ''
+
 			if (action === "none") {
 				actionText = "No Action"
 			} else if (action === "monster") {
@@ -135,7 +136,7 @@
 			const roll = rollDice(6)
 			let text = ''
 			if (roll == 6) {
-				text = "You killed every monster in the room!"
+				text = "You killed every monster in the room! (or a BIG monster)"
 			} else if (roll > 1 && roll < 6) {
 				text = "You killed the monster!"
 			} else {
